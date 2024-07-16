@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { MyContext } from "../MyContext";
 const DemoBook = ({ setTab, allFormData }) => {
-  console.log(allFormData, "data");
+  const {list}=useContext(MyContext);
+  console.log(list, "list");
   return (
     <div className="demobook-wrapper px-3">
       <div className="d-flex justify-content-between align-items-center">
@@ -30,7 +33,7 @@ const DemoBook = ({ setTab, allFormData }) => {
         <tbody>
           {allFormData?.map((item, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td scope="row">Ranch{index + 1}</td>
                 <td>{item?.contactPerson}</td>
                 <td>{item?.email}</td>

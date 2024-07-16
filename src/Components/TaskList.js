@@ -4,7 +4,7 @@ const TaskList = () => {
   return (
     <div>
       <h5 className="my-2">Task List</h5>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
